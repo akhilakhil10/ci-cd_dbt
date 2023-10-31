@@ -1,1 +1,2 @@
 sample test text file to check if it works
+.
