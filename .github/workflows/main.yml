@@ -21,5 +21,5 @@ jobs:
 
       - name: Copy dbt Files to GCS  
         run: |
-          gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags
+          gsutil -m cp -r ./dbt_project/* gs://cicdtestteraform/dags
     
