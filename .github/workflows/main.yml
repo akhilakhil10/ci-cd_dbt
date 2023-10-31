@@ -13,19 +13,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.x
-
-      - name: Install dbt
-        run: |
-          pip install dbt
-          dbt --version
-
-      - name: Build dbt Project
-        run: dbt run
-
       - name: Copy dbt Files to GCS 
         run: |
           gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags/
