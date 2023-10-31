@@ -17,4 +17,4 @@ jobs:
         run: |
           gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          GCS_KEY: ${{secrets.GCS_KEY}}
