@@ -13,8 +13,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Copy dbt Files to GCS 
+      - name: Copy dbt Files to GCS  
         run: |
-          gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags/
+          gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
