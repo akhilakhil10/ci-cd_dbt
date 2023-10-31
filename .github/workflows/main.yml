@@ -13,8 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - uses: google-github-actions/setup-gcloud@v0
+        with:
+          service_account_email: ${{secrets.GCP_EMAIL}}
+          service_account_key: ${{secrets>GCP_KEY}}
+          project_id: dev-project-403711
+
       - name: Copy dbt Files to GCS  
         run: |
           gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags
-        env:
-          GCS_KEY: ${{secrets.GCS_KEY}}
+    
