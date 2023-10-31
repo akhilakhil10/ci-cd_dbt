@@ -26,8 +26,8 @@ jobs:
       - name: Build dbt Project
         run: dbt run
 
-      - name: Copy dbt Files to GCS
+      - name: Copy dbt Files to GCS 
         run: |
-          gsutil -m cp -r ./dbt_project/ gs://your-gcs-bucket/dag-folder/
+          gsutil -m cp -r ./dbt_project/ gs://cicdtestteraform/dags/
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
